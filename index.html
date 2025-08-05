@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RHDP</title>
+</head>
+<body>
+<div class="particulas"></div>
+<nav class="navegacao">
+    <ul class="menu">
+        <li>
+            <a href="#inicio" class="menu-link">Início</a>
+        </li>
+        <li>
+            <a href="#sobre" class="menu-link">Sobre</a>
+        </li>
+        <li>
+            <a href="#projetos" class="menu-link">Projetos</a>
+        </li>
+        <li>
+            <a href="#contatos" class="menu-link">Contatos</a>
+        </li>
+    </ul>
+</nav>
+
+<main id="inicio" class="cabecalho">
+    <div class="foto-perfil-container">
+        <img src="Imag/img.png" alt="Foto de Perfil" class="foto-perfil">
+    </div>
+    <h1 class="titulo-cabecalho">Syntax Corporation Ⓒ.</h1>
+    <p class="cabecalho-sub-titulo">Video, Música e Identidade</p>
+</main>
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre</h2>
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                A <strong>Syntax Corporation</strong> nasceu com a missão de ir além do som. Atuamos como ponte entre o artista e sua essência, transformando ideias em experiências audiovisuais completas que impactam, conectam e eternizam momentos. Somos uma <strong>produtora independente</strong> que oferece estrutura, suporte criativo e técnico para artistas que vivem a cena. Produzimos lançamentos inéditos e entregamos muito mais que música: <strong>entregamos identidade</strong>. Com atuação nas frentes de <strong>produção sonora</strong>, <strong>captação de imagem</strong>, <strong>videoclipes</strong> e <strong>identidade visual</strong>, oferecemos soluções completas e profissionais para artistas que desejam expressar sua verdade com autenticidade e qualidade. Nossa entrega vai do estúdio à tela, do conceito à performance. Tudo com <strong>olhar artístico</strong>, <strong>sensibilidade urbana</strong> e <strong>compromisso com o impacto</strong>.
+            </p>
+        </div>
+    </section>
+
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Projetos</h2>
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+                <img src="Imag/FotoPerfil.png" alt="Projeto 1" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                <h3 class="info-projetos">Projeto 01</h3>
+                <p class="paragrafo-projetos">Breve Descrição do projeto...</p>
+            </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="Imag/IMG_5227.jpg" alt="Projeto 2" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                <h3 class="info-projetos">Projeto 02</h3>
+                <p class="paragrafo-projetos">Breve Descrição do projeto...</p>
+                </div>
+            </div>
+
+            <div class="projetos-card">
+                <img src="Imag/FotoPerfil.png" alt="Projeto 3" class="projetos-imagem">
+                <div class="caixa-textos-projetos">
+                <h3 class="info-projetos">Projeto 03</h3>
+                <p class="paragrafo-projetos">Breve Descrição do projeto...</p>
+            </div>
+            </div>
+
+        </div>
+    </section>
+
+<section id="contatos" class="contatos">
+    <h2 class="contatos-titulo">Entre em Contato</h2>
+    <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+        <div class="grupo-form">
+            <input type="text" placeholder="Seu Nome" class="campo-form" id="nome">
+        </div>
+        <div class="grupo-form">
+            <textarea class="campo-form" placeholder="Sua Mensagem" id="mensagem" rows="5"></textarea>
+        </div>
+
+        <button type="submit" class="botao-enviar">
+            Enviar via WhatsApp
+        </button>
+
+    </form>
+</section>
+
+<script>
+    function enviarWhats(event) {
+        event.preventDefault();
+
+        const nomeInput = document.getElementById('nome');
+        const mensagemInput = document.getElementById('mensagem');
+
+        if (nomeInput.value.trim() === '' || mensagemInput.value.trim() === '') {
+            alert('Por favor, preencha todos os campos.');
+            return;
+        }
+
+        const nome = nomeInput.value;
+        const mensagem = mensagemInput.value;
+        const telefone = '5519995110720';
+
+        const texto = `Olá! Me chamo ${nome}, e gostaria de conversar sobre: ${mensagem}.`;
+        const msgFormatada = encodeURIComponent(texto);
+
+        const url = `https://wa.me/${telefone}?text=${msgFormatada}`;
+
+        window.open(url, '_blank');
+    }
+
+</script>
+
+</body>
+</html>
